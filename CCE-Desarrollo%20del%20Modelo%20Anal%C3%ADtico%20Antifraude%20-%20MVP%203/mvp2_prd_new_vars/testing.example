@@ -1,0 +1,4 @@
+#sudo docker run -it --name api_fix --link redis-fraud:redis -p 8000:8000 69b47ff05800
+curl -X POST -d @example_demo.json https://10.201.4.25:443/fraud
+curl -X POST -d @example_demo.json https://api-qa.cce.com.pe:443/fraud
+#ab -c 1 -n 100 -p example_demo.json -T POST https://10.201.4.25:8000/fraud

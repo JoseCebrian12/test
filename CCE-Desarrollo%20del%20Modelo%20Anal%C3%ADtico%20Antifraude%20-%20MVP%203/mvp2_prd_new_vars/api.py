@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import unicodedata
 import pickle
+from feedback.model import AntifraudeRequest
 import redis
 import dotenv
 import json
@@ -834,6 +835,10 @@ async def fraud_prediction(request: Request):
         "time": get_current_time(),
         "pred": normalized_prediction[0],
     }
+
+@app.post("/feedback")
+async def feedback(request: AntifraudeRequest):
+    return {"mensaje": "Datos Validados"}
 
 
 # data = {
